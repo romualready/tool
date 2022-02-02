@@ -1,5 +1,10 @@
 #!bin/bash
 
+if [[ $EUID -ne 0 ]]; then
+   echo -e  "\e[1;31m [!] This script must be run as root"
+   exit 1
+fi
+
 clear
 
 banner () {
